@@ -1,0 +1,1086 @@
+/* =========================
+   1. 全局设置
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    color: #1f2937;
+    background: #ffffff;
+    line-height: 1.7;
+}
+
+a {
+    color: #1759a8;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0b356d;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   2. 顶部导航栏
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e5eaf0;
+}
+
+.nav-container {
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #123b73;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav a {
+    position: relative;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: #26374c;
+    letter-spacing: 0.4px;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+
+    width: 0;
+    height: 2px;
+
+    background: #1769c2;
+
+    transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+.menu-toggle {
+    display: none;
+}
+.nav a.active {
+    color: #1769c2;
+}
+
+.nav a.active::after {
+    width: 100%;
+}
+
+/* =========================
+   3. 首页 Hero
+========================= */
+
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(240, 247, 255, 0.96),
+            rgba(255, 255, 255, 0.97)
+        );
+
+    padding: 80px 0;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+.hero-text {
+    max-width: 680px;
+}
+
+.university-name {
+    margin-bottom: 18px;
+
+    color: #315b91;
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Noto Serif SC", serif;
+
+    font-size: 58px;
+    line-height: 1.2;
+
+    color: #123b73;
+
+    margin-bottom: 3px;
+}
+
+.hero h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+    letter-spacing: 2px;
+
+    color: #123b73;
+
+    margin-bottom: 20px;
+}
+
+.title-line {
+    width: 54px;
+    height: 3px;
+
+    background: #1769c2;
+
+    margin-bottom: 23px;
+}
+
+.hero h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 22px;
+    color: #253b59;
+
+    margin-bottom: 8px;
+}
+
+.affiliation {
+    color: #43566e;
+    font-size: 16px;
+
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    font-size: 15px;
+    color: #53657b;
+}
+
+
+/* =========================
+   4. 首页照片
+========================= */
+.mobile-hero-photo {
+    display: none;
+}
+.hero-photo {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-photo img {
+    width: 100%;
+    max-width: 330px;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+    object-position: center 28%;
+
+    border: 7px solid #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(29, 58, 96, 0.15);
+
+    border-radius: 2px;
+}
+
+
+/* =========================
+   5. 通用 Section
+========================= */
+
+.section {
+    padding: 78px 0;
+
+    border-bottom: 1px solid #e7ebf0;
+}
+
+.section-title {
+    position: relative;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #123b73;
+    font-size: 32px;
+
+    margin-bottom: 38px;
+
+    padding-left: 22px;
+}
+
+.section-title::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+
+    width: 4px;
+    height: 31px;
+
+    background: #1769c2;
+}
+
+
+/* =========================
+   6. About
+========================= */
+
+.about-container {
+    display: grid;
+
+    grid-template-columns: 1.5fr 0.8fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 17px;
+
+    color: #45576d;
+    font-size: 16px;
+}
+
+.collaboration {
+    margin-top: 26px;
+
+    color: #174f91 !important;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px !important;
+    font-style: italic;
+}
+
+.basic-info {
+    background: #f7faff;
+
+    border: 1px solid #e1e8f0;
+
+    padding: 27px 30px;
+}
+
+.basic-info h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #123b73;
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+
+.info-row {
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+.info-label {
+    color: #64748b;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   7. Education
+========================= */
+
+.timeline {
+    position: relative;
+
+    margin-left: 28px;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 127px;
+
+    top: 12px;
+    bottom: 12px;
+
+    width: 1px;
+
+    background: #b8c9dc;
+}
+
+.timeline-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 110px 1fr;
+
+    gap: 55px;
+
+    padding: 0 0 42px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: 121px;
+    top: 9px;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #1769c2;
+
+    border: 3px solid #ffffff;
+
+    box-shadow: 0 0 0 1px #aac0da;
+}
+
+.timeline-year {
+    color: #1769c2;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.timeline-content h3 {
+    margin-bottom: 3px;
+
+    color: #243852;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 19px;
+}
+
+.timeline-content p {
+    color: #617086;
+}
+
+
+/* =========================
+   8. Research
+========================= */
+
+.research-container {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 75px;
+
+    align-items: start;
+}
+
+.research-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+.research-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    background: #eef5fd;
+
+    border-radius: 50%;
+
+    color: #1769c2;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.research-name h3 {
+    color: #163e75;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+}
+
+.research-description p {
+    margin-bottom: 15px;
+
+    color: #4c6078;
+}
+
+
+/* =========================
+   9. Publications
+========================= */
+
+.publication {
+    display: grid;
+
+    grid-template-columns: 110px 1fr;
+
+    gap: 45px;
+
+    padding: 8px 0 28px;
+}
+
+.publication-year {
+    color: #1769c2;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.publication-status {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #60748d;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.publication-content h3 {
+    max-width: 800px;
+
+    margin-bottom: 9px;
+
+    color: #153c70;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+    line-height: 1.4;
+}
+
+.publication-authors {
+    margin-bottom: 4px;
+
+    color: #465a72;
+
+    font-size: 15px;
+}
+
+.publication-journal {
+    margin-bottom: 20px;
+
+    color: #3c516a;
+
+    font-size: 15px;
+}
+
+.publication-description {
+    max-width: 860px;
+
+    margin-bottom: 20px;
+
+    color: #52657b;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.paper-link {
+    display: inline-block;
+
+    padding-bottom: 3px;
+
+    border-bottom: 1px solid #1769c2;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   10. Teaching
+========================= */
+
+.teaching-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.course-card {
+    min-height: 135px;
+
+    padding: 27px;
+
+    background: #fbfcfe;
+
+    border: 1px solid #dfe7f0;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 25px rgba(25, 64, 111, 0.09);
+}
+
+.course-card h3 {
+    margin-bottom: 8px;
+
+    color: #153c70;
+
+    font-size: 18px;
+}
+
+.course-card p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   11. Contact
+========================= */
+
+.contact-section {
+    background: #fbfdff;
+}
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    gap: 70px;
+}
+
+.contact-name {
+    color: #163d71;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    color: #586a80;
+}
+
+.contact-label {
+    margin-bottom: 7px;
+
+    color: #738195 !important;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   12. Footer
+========================= */
+
+.footer {
+    padding: 30px 0;
+
+    background: #f3f6fa;
+
+    text-align: center;
+}
+
+.footer p {
+    color: #778497;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   13. 手机和平板适配
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav {
+        gap: 16px;
+    }
+
+    .nav a {
+        font-size: 11px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-photo {
+        order: 1;
+    }
+
+    .hero-photo img {
+        max-width: 260px;
+    }
+
+    .about-container,
+    .research-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .teaching-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   14. 手机端
+========================= */
+
+@media (max-width: 680px) {
+
+    .container {
+        width: 88%;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .nav-container {
+        flex-direction: column;
+
+        padding: 18px 0;
+
+        gap: 16px;
+    }
+
+    .nav {
+        width: 100%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 8px;
+    }
+
+    .nav a {
+        white-space: nowrap;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .hero h2 {
+        font-size: 31px;
+    }
+
+    .hero-photo img {
+        max-width: 230px;
+    }
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .timeline {
+        margin-left: 0;
+    }
+
+    .timeline::before {
+        left: 7px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+
+        gap: 6px;
+
+        padding-left: 32px;
+
+        padding-bottom: 35px;
+    }
+
+    .timeline-item::before {
+        left: 1px;
+    }
+
+    .publication {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+}
+/* =========================
+   手机端折叠菜单
+========================= */
+
+@media (max-width: 680px) {
+
+    .header {
+        position: sticky;
+        top: 0;
+    }
+
+    .nav-container {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 0;
+        gap: 0;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .menu-toggle {
+        display: block;
+        border: none;
+        background: transparent;
+        color: #123b73;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    .nav {
+        display: none;
+
+        position: absolute;
+        top: 66px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+
+        padding: 12px 20px;
+
+        background: #ffffff;
+
+        border: 1px solid #e2e8f0;
+
+        box-shadow: 0 8px 20px rgba(20, 55, 95, 0.08);
+
+        z-index: 1000;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        width: 100%;
+        padding: 11px 0;
+
+        font-size: 13px;
+
+        white-space: normal;
+    }
+
+        /* =========================
+   手机端首页：姓名左，照片右
+========================= */
+
+@media (max-width: 680px) {
+
+    .hero-text {
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr) 125px;
+
+        grid-template-areas:
+            "name photo"
+            "english photo"
+            "line photo"
+            "position photo"
+            "affiliation affiliation"
+            "description description";
+
+        column-gap: 22px;
+        align-items: start;
+    }
+
+    /* 手机上隐藏顶部那行学校英文名 */
+    .university-name {
+        display: none;
+    }
+
+    .hero h1 {
+        grid-area: name;
+
+        font-size: 38px;
+        margin-bottom: 4px;
+    }
+
+    .hero h2 {
+        grid-area: english;
+
+        font-size: 27px;
+        line-height: 1.25;
+        margin-bottom: 16px;
+    }
+
+    .title-line {
+        grid-area: line;
+        margin-bottom: 16px;
+    }
+
+    .hero h3 {
+        grid-area: position;
+
+        font-size: 19px;
+        margin-bottom: 0;
+    }
+
+    .mobile-hero-photo {
+        grid-area: photo;
+
+        display: block;
+        margin: 0;
+    }
+
+    .mobile-hero-photo img {
+        width: 125px;
+        height: 156px;
+
+        object-fit: cover;
+        object-position: center 25%;
+
+        border: 5px solid #ffffff;
+
+        box-shadow: 0 8px 22px rgba(29, 58, 96, 0.14);
+    }
+
+    .affiliation {
+        grid-area: affiliation;
+
+        margin-top: 26px;
+        margin-bottom: 22px;
+    }
+
+    .hero-description {
+        grid-area: description;
+    }
+
+    .hero-photo {
+        display: none;
+    }
+}
+/* =========================
+   手机端固定导航与锚点修正
+========================= */
+
+@media (max-width: 680px) {
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        z-index: 2000;
+    }
+
+    body {
+        padding-top: 68px;
+    }
+
+    html {
+        scroll-padding-top: 82px;
+    }
+
+    .nav-container {
+        min-height: 68px;
+    }
+}
+/* =========================
+   手机端顶部导航最终修正
+========================= */
+
+@media (max-width: 680px) {
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+        height: 68px;
+
+        background: #ffffff;
+
+        z-index: 3000;
+    }
+
+    .nav-container {
+        height: 68px;
+        min-height: 68px;
+
+        padding: 0;
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        line-height: 1;
+        margin: 0;
+    }
+
+    .menu-toggle {
+        line-height: 1;
+        margin: 0;
+        padding: 8px;
+    }
+
+    body {
+        padding-top: 68px;
+    }
+
+    html {
+        scroll-padding-top: 90px;
+    }
+
+    section[id] {
+        scroll-margin-top: 90px;
+    }
+}
+/* 手机端导航恢复 */
+@media (max-width: 680px) {
+
+    .header {
+        position: sticky;
+        top: 0;
+        left: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        z-index: 3000;
+    }
+
+    .nav-container {
+        min-height: 68px;
+        height: auto;
+    }
+
+    body {
+        padding-top: 0;
+    }
+
+    html {
+        scroll-padding-top: 0;
+    }
+
+    section[id] {
+        scroll-margin-top: 0;
+    }
+}
